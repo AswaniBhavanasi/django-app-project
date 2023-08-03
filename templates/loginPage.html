@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <title>Login Form</title>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+    body{
+        background-color: rgb(231, 234, 238);
+        margin-top: 20px;
+        background-image: url("/static/images/n2.jpg");
+
+    }
+
+        .jumbotron {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .submit-btn {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="jumbotron">
+                    <h1 class="text-center">Students Login Here...!!!</h1>
+                    <form method="POST" class="d-flex flex-column align-items-center">
+                        {% csrf_token %}
+                        
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert {% if message.tags %}{{ message.tags }}{% endif %}">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+
+                        <label> Enter username:</label>
+                        <input type="text" name="user" class="form-control">
+                        <label> Enter password:</label>
+                        <input type="password" name="password" class="form-control">
+                        <div class="text-center mt-1">
+                            <input type="submit" value="Login" class="btn btn-success btn-lg">
+                            <input type="reset" value="Cancel" class="btn btn-danger btn-lg"><br>
+                            <span style="font-size: 30px;">Register for an Account? </span>
+                            <a href="{% url 'register' %}" class="btn btn-success mt-2 btn-lg">Register</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% block content  %}
+    <h2 class="text-center"> Gallery Page</h2>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+             <img src="{% static 'images/Narayana.jpg' %}" alt="" style="height:80%; width:90%; border:2px green solid">
+        </div>
+        <div class="col-md-4">
+              <img src="{% static 'images/mahesh.jpeg' %}" style="height:80%; width:90%; border:2px red solid">
+          </div>
+          <div class="col-md-4">
+                <img src="{% static 'images/college.jpg' %}" style="height:80%; width:90%; border:2px green solid">
+            </div>
+            <div class="col-md-4">
+                  <img src="{% static 'images/student.jpeg' %}" style="height:80%; width:90%; border:2px red solid">
+              </div>
+              <div class="col-md-4">
+                    <img src="{% static 'images/srinivas.jpeg' %}" style="height:80%; width:90%; border:2px green solid">
+                </div>
+                <div class="col-md-4">
+                      <img src="{% static 'images/s.jpeg' %}" style="height:80%; width:90%;  border:2px red solid">
+                  </div>
+
+    </div>
+
+  </div>
+
+  {% endblock %}
+  </body>
+</html>

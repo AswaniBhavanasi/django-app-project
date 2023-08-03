@@ -1,0 +1,41 @@
+ {% load static %}
+<nav class="navbar navbar-expand-lg navbar-nav bg-dark text-white">
+  <button class="navbar-toggler ml-2" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav" class="text-white">
+    <ul class="navbar-nav">
+      <li class="nav-item {% if request.path == '/' %}active{% endif %}"">
+        <a class="nav-link" href="{% url 'home' %}">Home</a>
+      </li>
+      <li class="nav-item" {% if request.path == '/contact' %}active{% endif %}">
+        <a class="nav-link" href="{% url 'contactus' %}">Contact</a>
+      </li>
+      <li class="nav-item" {% if request.path == '/service' %}active{% endif %}>
+        <a class="nav-link" href="{%  url 'service' %}">Services</a>
+      </li>
+      <li class="nav-item" {% if request.path == '/feedback' %}active{% endif %}">
+        <a class="nav-link " href="{%  url 'feedback' %}">Feedback</a>
+      </li>
+      <li class="nav-item" {% if request.path == '/gallery' %}active{% endif %}">
+        <a class="nav-link " href="{%  url 'gallery' %}">Gallery</a>
+      </li>
+    </ul>
+</div>
+
+<script>
+  // Custom JavaScript to add 'active' class to the correct link
+  var currentPath = window.location.pathname;
+  var links = document.querySelectorAll('.navbar-nav .nav-item');
+  for (var i = 0; i < links.length; i++) {
+    var linkPath = links[i].querySelector('a').getAttribute('href');
+    if (linkPath === currentPath) {
+      links[i].classList.add('active');
+    }
+  }
+</script>
+  <div class="text-right text-white">
+    <span> Hello {{ user|capfirst }},</span>
+    <a href="{% url 'logout' %}" class="text-white">Logout</a>
+  </div>
+</nav>

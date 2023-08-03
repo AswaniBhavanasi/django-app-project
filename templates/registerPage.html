@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <title>Registration Form</title>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+    body{
+        background-color: rgb(231, 234, 238);
+        margin-top: 20px;
+        background-image: url("/static/images/n2.jpg");
+
+    }
+
+        .jumbotron {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .submit-btn {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="jumbotron">
+                    <h1 class="text-center">Student Registration</h1>
+                    <form method="POST" class="d-flex flex-column align-items-center">
+                        {% csrf_token %}
+
+                        {% if messages %}
+                            <div class="alert alert-success">
+                                {% for message in messages %}
+                                    {{ message }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+
+                        <div class="form-group w-100">
+                            <label class="form-label">First Name:</label>
+                            <input type="text" name="first_name" class="form-control" required>
+                        </div>
+
+                        <div class="form-group w-100">
+                            <label class="form-label">Last Name:</label>
+                            <input type="text" name="last_name" class="form-control" required>
+                        </div>
+
+                        <div class="form-group w-100">
+                            <label class="form-label">Email ID:</label>
+                            <input type="email" name="email" class="form-control" required>
+                        </div>
+
+                        <div class="form-group w-100">
+                            <label class="form-label">Username:</label>
+                            <input type="text" name="username" class="form-control" required>
+                        </div>
+
+                        <div class="form-group w-100">
+                            <label class="form-label">Password:</label>
+                            <input type="password" name="password" class="form-control" required>
+                        </div>
+
+                        <div class="text-center mt-1">
+                            <input type="submit" value="Signup" class="btn btn-success btn-lg">
+                            <input type="reset" value="Clear" class="btn btn-danger btn-lg"><br>
+                            <span style="font-size: 35px;">Login Here? </span>
+                            <a href="{% url 'login' %}" class="btn btn-success mt-2 btn-lg">Login</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

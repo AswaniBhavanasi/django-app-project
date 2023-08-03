@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% include 'cdnlines.html' %}
+    <title></title>
+  </head>
+  <style>
+    body{
+        background-color: white;
+    }
+    #12{
+        background-color: blue;
+    }
+    #name1{
+        font-size: 30px;
+        color:red;
+        font-family: cursive;
+        text-shadow: 2px 2px blue;
+    }
+    #ul1 {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: black;
+
+    }
+
+    li a{
+        float:left;
+    }
+    li a{
+        display: block;
+        color:white;
+        text-align: center;
+        padding:20px 30px;
+        text-decoration: none;
+        font-size: 20px;
+    }
+    .active{
+        background-color: green;
+    }
+    li a:hover{
+        background-color: orange;
+        color: blue;
+    }
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width:100%;
+        background-color: blue;
+        color: white;
+        text-align: center;
+    }
+    #h11{
+        color: red ;
+        font-family: cursive;
+        font-size: 50px;
+        text-shadow: 5px 5px 5px green;
+        margin-top: -5px;
+    }
+    .img1{
+        border-radius: 30px;
+    }
+</style>
+
+  <body>
+
+    {% include 'navbar.html' %}
+    <marquee><h1 id="h11">Welcome to our Training Institute</h1></marquee>
+
+    {% block content %}
+
+    {% endblock %}
+    <footer class="footer">
+
+        <h3 id="12"> © 2023 Advanced Learning Institute | Designed by : Aswani Bhavanasi</h3>
+
+    </footer>
+
+  </body>
+</html>

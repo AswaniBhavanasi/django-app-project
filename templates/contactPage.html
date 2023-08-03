@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    {% block content %}
+    <h1 class="text-center">Contact Page</h1>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4" id="s1"style=" background:success">
+          <h1 class="text-center bg-success text-white ">CONTACT US</h1>
+          <form method="POST">
+            {% csrf_token %}
+            <label>Firstname:</label>
+            <input type="text" name="fname" class="form-control">
+            <label>Lastname:</label>
+            <input type="text" name="lname" class="form-control">
+            <label>Email:</label>
+            <input type="email" name="email" class="form-control">
+            <label>Mobile:</label>
+            <input type="number" name="mobile" class="form-control">
+            <label>location:</label>
+            <input type="text" name="location" class="form-control"><br>
+            <center>
+              <input type="submit"  value="Add"class="btn btn-success text-white">
+              <input type="reset"  value="cancel"class="btn btn-danger text-white">
+            </center>
+          </form>
+        </div>
+        <div class="col-md-4 " id="s1"style="background:pink">
+          <h3  class="text-center bg-success text-white">ADDRESS1</h3>
+          <h4>Python Soft Solutions,</h4>
+          <h4>Flat No 10/20, Near Raju High School,</h4>
+          <h4>Rayachoty, Annamayya(d),</h4>
+          <h4>Andhra pradesh - 516269</h4>
+          <h3  class="text-center bg-danger text-white">ADDRESS2</h3>
+          <h4>Narayana Tech House,</h4>
+          <h4>Flat No 303, 3rd floor,</h4>
+          <h4>Naga Sai Nivas Prime Hospital Lane, opposite to Balaji Towers,</h4>
+          <h4>Ameerpet, Hyderabad, Telangana 500016.</h4>
+        </div>
+
+        <div class="col-md-4" id="s1" style="background:danger">
+
+          <h1 class="text-center bg-success text-white ">Our Location</h1>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15225.780616967357!2d78.4457617!3d17.4383952!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb25b7c2fe2e4fd5d!2sNarayana%20Tech%20House!5e0!3m2!1sen!2sin!4v1672568522154!5m2!1sen!2sin" width="580" height="500" style="border:0; margin-right:100px; border-radius:20px;"allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    </div>
+
+
+          </div>
+    {% endblock %}
+  </body>
+</html>
